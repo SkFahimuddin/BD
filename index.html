@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday! 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== LANDING SCREEN ===== -->
+  <div id="landing" class="screen active">
+    <div class="landing-bg">
+      <div class="sparkle-container" id="landingSparkles"></div>
+    </div>
+    <div class="landing-content">
+      <div class="crown-icon">👑</div>
+      <h1 class="landing-title">Happy Birthday!</h1>
+      <p class="landing-subtitle">Choose your magical world</p>
+      <div class="theme-cards">
+
+        <div class="theme-card frozen" onclick="enterTheme('frozen')">
+          <div class="card-glow"></div>
+          <div class="card-icon">❄️</div>
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Frozen_%282013_film%29_poster.jpg" alt="Frozen" />
+          </div>
+          <h2>Frozen</h2>
+          <p>Into the icy kingdom</p>
+          <button class="card-btn">Let It Go →</button>
+        </div>
+
+        <div class="theme-card cinderella" onclick="enterTheme('cinderella')">
+          <div class="card-glow"></div>
+          <div class="card-icon">👠</div>
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Cinderella_%281950_film%29.png" alt="Cinderella" />
+          </div>
+          <h2>Cinderella</h2>
+          <p>A dream is a wish</p>
+          <button class="card-btn">Bibbidi Bobbidi →</button>
+        </div>
+
+        <div class="theme-card moana" onclick="enterTheme('moana')">
+          <div class="card-glow"></div>
+          <div class="card-icon">🌊</div>
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/4e/Moana_%282016_film%29_poster.jpg" alt="Moana" />
+          </div>
+          <h2>Moana</h2>
+          <p>The ocean calls</p>
+          <button class="card-btn">Set Sail →</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FROZEN THEME ===== -->
+  <div id="theme-frozen" class="screen theme-screen">
+    <div class="frozen-bg">
+      <div class="snowflakes" id="snowflakes"></div>
+      <div class="frozen-overlay"></div>
+    </div>
+    <div class="theme-content frozen-content">
+      <button class="back-btn" onclick="goBack()">← Back</button>
+      <div class="wish-container">
+        <div class="frozen-castle">🏔️</div>
+        <div class="frozen-badge">❄️ A Frozen Birthday ❄️</div>
+        <h1 class="theme-title frozen-title">Happy Birthday!</h1>
+        <div class="wish-message frozen-message">
+          <p class="line1">The cold never bothered you anyway...</p>
+          <p class="line2">But this birthday? It's absolutely <em>magical!</em></p>
+          <p class="line3">May your day be as sparkling as Elsa's ice palace, as warm as Anna's heart, and as adventurous as a sleigh ride with Kristoff & Sven! 🦌</p>
+        </div>
+        <div class="characters">
+          <span class="char">❄️</span>
+          <span class="char">👸</span>
+          <span class="char">❄️</span>
+          <span class="char">⛄</span>
+          <span class="char">❄️</span>
+        </div>
+        <div class="frozen-quote">"Some people are worth melting for."</div>
+        <button class="magic-btn frozen-btn" onclick="triggerFrozenMagic()">✨ Let It Go! ✨</button>
+      </div>
+      <div class="music-control">
+        <button class="music-btn" id="music-frozen" onclick="toggleMusic('frozen')">🎵 Play Music</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CINDERELLA THEME ===== -->
+  <div id="theme-cinderella" class="screen theme-screen">
+    <div class="cinderella-bg">
+      <div class="stars-container" id="stars"></div>
+      <div class="magic-dust" id="magicDust"></div>
+    </div>
+    <div class="theme-content cinderella-content">
+      <button class="back-btn" onclick="goBack()">← Back</button>
+      <div class="wish-container">
+        <div class="fairy-godmother">🧚‍♀️</div>
+        <div class="pumpkin-carriage">🎃✨🐎</div>
+        <div class="cin-badge">✨ A Royal Birthday ✨</div>
+        <h1 class="theme-title cin-title">Happy Birthday!</h1>
+        <div class="wish-message cin-message">
+          <p class="line1">Bibbidi-Bobbidi-Boo! A wish comes true...</p>
+          <p class="line2">On this magical day, <em>YOU</em> are the princess!</p>
+          <p class="line3">May every moment shine like a glass slipper, every dream come true at midnight, and may your birthday ball last forever! 👑</p>
+        </div>
+        <div class="clock-countdown">
+          <div class="clock-face">🕛</div>
+          <div class="clock-msg">No midnight curfew on your birthday!</div>
+        </div>
+        <div class="cin-quote">"Even miracles take a little time."</div>
+        <button class="magic-btn cin-btn" onclick="triggerCinderellaMagic()">✨ Make a Wish! ✨</button>
+      </div>
+      <div class="music-control">
+        <button class="music-btn" id="music-cinderella" onclick="toggleMusic('cinderella')">🎵 Play Music</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MOANA THEME ===== -->
+  <div id="theme-moana" class="screen theme-screen">
+    <div class="moana-bg">
+      <div class="waves-container">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+      </div>
+      <div class="stars-night" id="nightStars"></div>
+    </div>
+    <div class="theme-content moana-content">
+      <button class="back-btn" onclick="goBack()">← Back</button>
+      <div class="wish-container">
+        <div class="moana-hook">🪝</div>
+        <div class="moana-badge">🌊 An Ocean Birthday 🌊</div>
+        <h1 class="theme-title moana-title">Happy Birthday!</h1>
+        <div class="wish-message moana-message">
+          <p class="line1">The ocean chose you for a reason...</p>
+          <p class="line2">Today, the waves sing <em>your</em> birthday song!</p>
+          <p class="line3">May your journey be as bold as Moana's voyage, your heart as brave as Maui's hook, and your birthday as beautiful as the glowing sea! 🌺</p>
+        </div>
+        <div class="ocean-creatures">
+          <span>🐠</span><span>🐟</span><span>🦀</span><span>🐬</span><span>🌊</span>
+        </div>
+        <div class="moana-quote">"The call isn't out there at all — it's inside me."</div>
+        <button class="magic-btn moana-btn" onclick="triggerMoanaMagic()">🌊 Sail Away! 🌊</button>
+      </div>
+      <div class="music-control">
+        <button class="music-btn" id="music-moana" onclick="toggleMusic('moana')">🎵 Play Music</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONFETTI CANVAS ===== -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- ===== MAGIC POPUP ===== -->
+  <div id="magicPopup" class="magic-popup hidden">
+    <div class="popup-inner">
+      <div class="popup-emoji" id="popupEmoji">🎂</div>
+      <div class="popup-text" id="popupText">Happy Birthday!</div>
+      <button onclick="closePopup()">Close ✨</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
