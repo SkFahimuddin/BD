@@ -276,17 +276,17 @@ animateConfetti();
 // =============================================
 function triggerFrozenMagic() {
   launchConfetti('frozen', 150, canvas.width / 2, canvas.height / 2);
-  showPopup('❄️', "Let It Go! ❄️\n\nHappy Birthday, Ice Queen! May your birthday be as magical as Elsa's palace and as warm as Olaf's hugs! ☃️✨");
+  showPopup('❄️', "Let It Go, Sanjhbati! ❄️\n\nHappy Birthday, Ice Queen! May your birthday be as magical as Elsa's palace and as warm as Olaf's hugs! ☃️✨");
 }
 
 function triggerCinderellaMagic() {
   launchConfetti('cinderella', 150, canvas.width / 2, canvas.height / 2);
-  showPopup('✨', "A Dream is a Wish! 👑\n\nBibbidi-Bobbidi-Boo! Your birthday wish just came true! You are the most beautiful princess of all! 🥿💫");
+  showPopup('✨', "A Dream is a Wish, Sanjhbati! 👑\n\nBibbidi-Bobbidi-Boo! Your birthday wish just came true! You are the most beautiful princess of all! 🥿💫");
 }
 
 function triggerMoanaMagic() {
   launchConfetti('moana', 150, canvas.width / 2, canvas.height / 2);
-  showPopup('🌊', "The Ocean Calls! 🌺\n\nThe waves sing your name today! You are fearless, bold, and incredible — Happy Birthday, Voyager! ⛵🌟");
+  showPopup('🌊', "The Ocean Calls, Sanjhbati! 🌺\n\nThe waves sing your name today! You are fearless, bold, and incredible — Happy Birthday, Voyager! ⛵🌟");
 }
 
 // =============================================
@@ -319,13 +319,8 @@ function getAudioContext() {
 
 // Musical themes using Web Audio API oscillators
 function createFrozenMusic(ctx) {
-  // "Let It Go" inspired — simple melodic arpeggio in Ab
   const masterGain = ctx.createGain();
   masterGain.gain.setValueAtTime(0.18, ctx.currentTime);
-
-  const reverb = ctx.createConvolver();
-  const reverbGain = ctx.createGain();
-  reverbGain.gain.value = 0.3;
   masterGain.connect(ctx.destination);
 
   const notes = [415, 466, 554, 622, 698, 784, 880, 784, 698, 622, 554, 466,
@@ -356,7 +351,6 @@ function createFrozenMusic(ctx) {
 }
 
 function createCinderellaMusic(ctx) {
-  // Waltz-like arpeggio in C major
   const masterGain = ctx.createGain();
   masterGain.gain.setValueAtTime(0.15, ctx.currentTime);
   masterGain.connect(ctx.destination);
@@ -383,7 +377,6 @@ function createCinderellaMusic(ctx) {
     osc.stop(ctx.currentTime + 0.45);
     noteIdx++;
 
-    // Bass note every 3 beats
     if (noteIdx % 3 === 0) {
       const bass = ctx.createOscillator();
       const bassGain = ctx.createGain();
@@ -403,7 +396,6 @@ function createCinderellaMusic(ctx) {
 }
 
 function createMoanaMusic(ctx) {
-  // Polynesian-inspired rhythm in D major
   const masterGain = ctx.createGain();
   masterGain.gain.setValueAtTime(0.18, ctx.currentTime);
   masterGain.connect(ctx.destination);
@@ -429,7 +421,6 @@ function createMoanaMusic(ctx) {
     osc.start(ctx.currentTime);
     osc.stop(ctx.currentTime + 0.4);
 
-    // Percussion
     if (noteIdx % 4 === 0) {
       const noise = ctx.createOscillator();
       const noiseGain = ctx.createGain();
